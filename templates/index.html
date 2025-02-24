@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>NY Collisions and Crashes Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/style.css') }}">
+</head>
+<body>
+    <section id="intro">
+        <h1>New York Collisions and Crashes Analysis</h1>
+        <p>Exploring traffic patterns and contributing factors to improve road safety in New York.</p>
+    </section>
+
+    <section id="forms">
+        <div class="form-card" onclick="window.location.href='{{ url_for('pedestrian') }}'">
+            <img src="{{ url_for('static', filename='images/pedestrian.jpg') }}" alt="Pedestrian Safety Prediction">
+            <p>Pedestrian Safety</p>
+        </div>
+        <div class="form-card" onclick="window.location.href='{{ url_for('weekend') }}'">
+            <img src="{{ url_for('static', filename='images/weekend.jpg') }}" alt="Weekend or Weekday">
+            <p>Weekend or Weekdays</p>
+        </div>
+    </section>
+
+    <section id="visualizations" class="bg-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 visualization">
+                    <img src="{{ url_for('static', filename='images/borough.png') }}" alt="Borough Visualization">
+                    <p class="description">Insights into incident distribution across boroughs.</p>
+                </div>
+                <div class="col-md-6 visualization">
+                    <img src="{{ url_for('static', filename='images/contribution.png') }}" alt="Contribution Visualization">
+                    <p class="description">Top factors contributing to traffic incidents.</p>
+                </div>
+                <div class="col-md-6 visualization">
+                    <img src="{{ url_for('static', filename='images/monthlyincidents.png') }}" alt="Monthly Incidents Visualization">
+                    <p class="description">Trends in monthly traffic incident rates.</p>
+                </div>
+                <div class="col-md-6 visualization">
+                    <img src="{{ url_for('static', filename='images/weekendvsday.png') }}" alt="Weekends vs Weekdays">
+                    <p class="description">Comparison of incidents during weekends versus weekdays.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+</body>
+</html>
+

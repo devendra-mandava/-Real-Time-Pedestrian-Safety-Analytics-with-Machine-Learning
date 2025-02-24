@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Pedestrian Injury</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pedestrian.css') }}">
+
+</head>
+<body>
+    <h1>Pedestrian Injury Prediction Form</h1>
+    <form action="{{ url_for('predict_pedestrian') }}" method="post">
+        <label for="borough">Borough:</label>
+        <select id="borough" name="BOROUGH">
+            <option value="brooklyn">Brooklyn</option>
+            <option value="queens">Queens</option>
+            <option value="manhattan">Manhattan</option>
+            <option value="bronx">Bronx</option>
+            <option value="staten island">Staten Island</option>
+        </select><br><br>
+
+        <label for="cyclistInjured">Number of Cyclist Injured:</label>
+        <select id="cyclistInjured" name="cyclistInjured" required>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select><br><br>
+
+        <label for="motoristInjured">Number of Motorist Injured:</label>
+        <select id="motoristInjured" name="motoristInjured" required>
+            <option value="0">0</option>
+            <option value="1">1</option>
+        </select><br><br>
+
+        <label for="contributingFactor">Contributing Factor Vehicle 1:</label>
+        <select id="contributingFactor" name="CONTRIBUTING FACTOR VEHICLE 1">
+            <option value="Other">Other</option>
+            <option value="risky behavior">Risky Behavior</option>
+            <option value="driver inattention/distraction">Driver Inattention/Distraction</option>
+            <option value="unsafe speed">Unsafe Speed</option>
+            <option value="reaction to uninvolved vehicle">Reaction to Uninvolved Vehicle</option>
+            <option value="other vehicular">Other Vehicular</option>
+            <option value="outside car distraction">Outside Car Distraction</option>
+            <option value="backing unsafely">Backing Unsafely</option>
+            <option value="passing too closely">Passing Too Closely</option>
+            <option value="driver inexperience">Driver Inexperience</option>
+            <option value="oversized vehicle">Oversized Vehicle</option>
+            <option value="passing or lane usage improper">Passing or Lane Usage Improper</option>
+            <option value="following too closely">Following Too Closely</option>
+            <option value="fatigued/drowsy">Fatigued/Drowsy</option>
+            <option value="pavement slippery">Pavement Slippery</option>
+            <option value="failure to yield right-of-way">Failure to Yield Right-of-Way</option>
+            <option value="lost consciousness">Lost Consciousness</option>
+            <option value="turning improperly">Turning Improperly</option>
+            <option value="unsafe lane changing">Unsafe Lane Changing</option>
+            <option value="traffic control disregarded">Traffic Control Disregarded</option>
+            <option value="prescription medication">Prescription Medication</option>
+            <option value="alcohol involvement">Alcohol Involvement</option>
+            <option value="view obstructed/limited">View Obstructed/Limited</option>
+        </select><br><br>
+        
+        
+        <label for="vehicleType">Vehicle Type Code 1:</label>
+        <select id="vehicleType" name="VEHICLE TYPE CODE 1">
+            <option value="sedan">Sedan</option>
+            <option value="station wagon/sport utility vehicle">Station Wagon/Sport Utility Vehicle</option>
+            <option value="taxi">Taxi</option>
+            <option value="passenger vehicle">Passenger Vehicle</option>
+            <option value="bus">Bus</option>
+            <option value="sport utility / station wagon">Sport Utility / Station Wagon</option>
+            <option value="4 dr sedan">4 Dr Sedan</option>
+            <option value="pickup truck">Pick-up Truck</option>
+            <option value="van">Van</option>
+            <option value="box truck">Box Truck</option>
+        </select><br><br>
+  
+        <label for="weekend">Weekend:</label>
+        <select id="weekend" name="weekend" required>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select><br><br>
+        
+        
+        <input type="submit" value="Predict">
+    </form>
+
+    <div id="prediction-result">
+    {% if prediction is not none %}
+    <h2>Chance of Pedestrian getting Injured [0-No, 1-Yes]: {{ prediction }}</h2>
+    {% endif %}
+    </div>
+
+</body>
+</html>

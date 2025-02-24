@@ -1,0 +1,115 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4; 
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    padding: 50px 0;
+}
+
+#intro {
+    background-color: #333; 
+    color: #fff;
+}
+
+#forms {
+    justify-content: space-around;
+    flex-wrap: wrap; 
+}
+
+.form-card {
+    width: 30%;
+    margin: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.form-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.form-card img {
+    width: 100%;
+    height: auto;
+}
+
+#visualizations {
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+}
+
+
+
+.bg-dark {
+    background-color: #333; 
+    color: #fff;
+    padding: 2rem 0;
+}
+
+.container {
+    max-width: 1140px;
+    margin: auto;
+    padding: 0 15px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.col-md-6 {
+    padding: 0 15px;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.visualization {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.visualization img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px; 
+}
+
+.description {
+    color: #fff;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .col-md-6 {
+        width: 100%;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .form-card {
+        width: 45%; 
+    }
+}
+
+@media (max-width: 480px) {
+    .form-card {
+        width: 90%; 
+    }
+}
